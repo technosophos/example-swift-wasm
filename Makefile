@@ -15,5 +15,5 @@ build:
 .PHONY: build-linux
 build-linux:
 	PATH="./usr/bin:$$PATH"
-	LD_LIBARRY_PATH=./usr/lib/swift/linux \
+	LD_LIBRARY_PATH=./usr/lib/swift/linux \
 	$(SWIFTC) -target $(TARGET) $(SRC_DIR)/main.swift -o $(DEST) 
