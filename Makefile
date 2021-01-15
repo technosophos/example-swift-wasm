@@ -9,13 +9,10 @@ SDK_DIR ?= "/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin"
 
 .PHONY: build
 build:
-	ls -lah /usr/local/bin/swift
 	PATH=$(SDK_DIR):$$PATH \
 	$(SWIFTC) -target $(TARGET) $(SRC_DIR)/main.swift -o $(DEST) 
 
 # Target for cases where the core Linux system swift has the Wasm patch.
 .PHONY: build-linux
 build-linux:
-	which swiftc 
-	$(SWIFTC) --version
 	/usr/bin/swiftc -target $(TARGET) $(SRC_DIR)/main.swift -o $(DEST) 
