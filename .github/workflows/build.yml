@@ -42,4 +42,4 @@ jobs:
         ls -lah
         export PATH=$(pwd)/usr/bin:"${PATH}"
     - name: Build
-      run: SDK_DIR=$(pwd)/wasi-sdk-11.0/bin make build
+      run: LD_LIBRARY_PATH=$(pwd)/wasi-sdk-11.0/ make build
