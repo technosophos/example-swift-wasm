@@ -53,7 +53,7 @@ jobs:
       run: echo "RELEASE_VERSION=canary" >> $GITHUB_ENV
 
     - name: Build release
-      run: make build
+      run: make build-linux
 
     - name: Upload artifact
       uses: actions/upload-artifact@v1
