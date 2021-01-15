@@ -42,4 +42,4 @@ jobs:
         sudo chmod -R o+r /usr/lib/swift
         ls -lah /usr/lib/swift
     - name: Build
-      run: SWIFTC=/usr/bin/swiftc make build-linux
+      run: SWIFTC=/usr/bin/swiftc make build
