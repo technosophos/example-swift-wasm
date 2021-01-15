@@ -14,5 +14,6 @@ build:
 
 .PHONY: build-linux
 build-linux:
+	which swiftc 
 	$(SWIFTC) --version
-	$(SWIFTC) -target $(TARGET) $(SRC_DIR)/main.swift -o $(DEST) 
+	/usr/bin/swiftc -target $(TARGET) $(SRC_DIR)/main.swift -o $(DEST) 
