@@ -11,3 +11,7 @@ SDK_DIR ?= "/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin"
 build:
 	PATH=$(SDK_DIR):$$PATH \
 	$(SWIFTC) -target $(TARGET) $(SRC_DIR)/main.swift -o $(DEST) 
+
+.PHONY: build-linux
+build-linux:
+	$(SWIFTC) -target $(TARGET) $(SRC_DIR)/main.swift -o $(DEST) 

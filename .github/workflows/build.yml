@@ -38,8 +38,8 @@ jobs:
           tzdata \
           zlib1g-dev
         wget https://github.com/swiftwasm/swift/releases/download/swift-wasm-5.3.0-RELEASE/swift-wasm-5.3.0-RELEASE-ubuntu20.04_x86_64.tar.gz
-        tar zxvf swift-wasm-5.3.0-RELEASE-ubuntu20.04_x86_64.tar.gz
+        tar zxvf swift-wasm-5.3.0-RELEASE-ubuntu20.04_x86_64.tar.gz  --directory / --strip-components=1
+        chmod -R o+r /usr/lib/swift
         ls -lah
-        export PATH=$(pwd)/usr/bin:"${PATH}"
     - name: Build
-      run: LD_LIBRARY_PATH=$(pwd)/wasi-sdk-11.0/ make build
+      run: make build-linux
