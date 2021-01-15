@@ -14,4 +14,5 @@ build:
 
 .PHONY: build-linux
 build-linux:
-	$(SWIFTC) -target $(TARGET) -sdk ./usr/share/wasi-sysroot $(SRC_DIR)/main.swift -o $(DEST) 
+	PATH="./usr/bin:$$PATH"
+	$(SWIFTC) -target $(TARGET) $(SRC_DIR)/main.swift -o $(DEST) 
